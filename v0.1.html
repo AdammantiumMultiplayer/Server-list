@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>AMPM Server list</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<style>
+table.myTable{
+	width: 100%;
+	border-collapse: collapse;
+	margin-top:20px;
+}
+table.myTable th, table.myTable td{
+	border: 1px solid #cdcdcd;
+	padding: 7px;
+}
+</style>
+<script>
+$(document).ready(function(){
+	$('.btn-addrow').click(function(){
+  		var sname = $('.servername').val();
+  		var sip = $('.serverip').val();
+  		var sport = $('.serverport').val();
+		  $('.myTable').append("<tr><td>"+sname+"</td><td>"+sip+"</td><td>"+sport+"</td><td></td></tr>");
+	});
+});
+</script>
+</head>
+<body>
+<h2>Add a server</h2>
+<p>Please fill the below form and click the 'Add New Row' button to add table rows dynamically.</p>
+<form>
+	<input type="text" class="servername" placeholder="Server name">
+  	<input type="text" class="serverip" placeholder="Enter ip">
+  	<input type="text" class="serverport" placeholder="Enter port">
+  	<button type="button" class="btn-addrow">Add New Row</button>
+</form>
+<table class="myTable">
+	<thead>
+        <tr>                                  
+    		<th>Server name</th>
+        	<th>Ip</th>
+        	<th>Port</th> 
+			<th>actions</th>
+        </tr>                                                                      
+    </thead>    
+  	<tbody>                                   
+    </tbody>
+</table>
+</body>
+</html>              

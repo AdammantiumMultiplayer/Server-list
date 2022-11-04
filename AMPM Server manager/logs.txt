@@ -1,0 +1,83 @@
+[00:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[00:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[00:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[00:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[01:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[01:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[01:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[01:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[02:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[02:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[02:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[02:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[03:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[03:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[03:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[03:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[04:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[04:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[04:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[04:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[05:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[05:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[05:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[05:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[06:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[06:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[06:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[06:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[07:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[07:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[07:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[07:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[08:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[08:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[08:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[08:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[09:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[09:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[09:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[09:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[10:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[10:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[10:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[10:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[11:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[11:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[11:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[11:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[12:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[12:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[12:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[12:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[13:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[13:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[13:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[13:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[14:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[14:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[14:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[14:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[15:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[15:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[15:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[15:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[16:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[16:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[16:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[16:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[17:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[17:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[17:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[17:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[18:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[18:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[18:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[18:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[19:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[19:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[19:30:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[19:30:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+[20:00:00] [ftbbackups2_Worker-1/INFO]: Attempting to create an automatic backup
+[20:00:00] [ftbbackups2_Worker-1/INFO]: Skipping backup, no players have been online since last backup.
+

@@ -1,0 +1,2 @@
+players 0/10
+run time 1h 10 min

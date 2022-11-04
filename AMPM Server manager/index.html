@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<script src="functions.js"></script>
+<script src="writejson.js"></script>
+<script src="buttons.css"></script>
+<style>
+    .btn {
+        border: none;
+        /* Remove borders */
+        color: white;
+        /* Add a text color */
+        padding: 14px 28px;
+        /* Add some padding */
+        cursor: pointer;
+        /* Add a pointer cursor on mouse-over */
+    }
+    
+    .success {
+        background-color: #04AA6D;
+    }
+    /* Green */
+    
+    .success:hover {
+        background-color: #46a049;
+    }
+    
+    .info {
+        background-color: #2196F3;
+    }
+    /* Blue */
+    
+    .info:hover {
+        background: #0b7dda;
+    }
+    
+    .warning {
+        background-color: #ff9800;
+    }
+    /* Orange */
+    
+    .warning:hover {
+        background: #e68a00;
+    }
+    
+    .danger {
+        background-color: #f44336;
+    }
+    /* Red */
+    
+    .danger:hover {
+        background: #da190b;
+    }
+    
+    .default {
+        background-color: #e7e7e7;
+        color: black;
+    }
+    /* Gray */
+    
+    .default:hover {
+        background: #ddd;
+    }
+</style>
+<style>
+    /* Style buttons */
+    
+    .buttonload {
+        background-color: #04AA6D;
+        /* Green background */
+        border: none;
+        /* Remove borders */
+        color: white;
+        /* White text */
+        padding: 12px 16px;
+        /* Some padding */
+        font-size: 16px/* Set a font size */
+    }
+</style>
+
+<head>
+    <h2>Server controls</h2>
+    <button id=btnstart onclick='handleClick(this)' class="btn success">Start</button>
+    <button id=btnstop onclick='handleClick(this)' class="btn danger">Stop</button>
+    <button id=btnrestart onclick="handleClick(this)" class="btn warning">Restart</button>
+
+
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Add font awesome icons to buttons (note that the fa-spin class rotates the icon) -->
+
+
+    <h2>terminal</h2>
+    <iframe src="logs.txt"></iframe>
+
+    <h2>Player info</h2>
+    <iframe src="test.txt"> 
+</iframe>
+
+    </body>
