@@ -134,6 +134,18 @@ span.tick {
 .panel .close:hover {
 	color: red;
 }
+
+.panel .data {
+	font-size: 25px;
+	position: fixed;
+	top: 0px; right: 0px; bottom: 0px; left: 0px;
+	margin: auto;
+	border-spacing: 8px;
+}
+
+.panel .data tr td:first-child {
+	text-align: right;
+}
 </style>
 </head>
 <body>
@@ -206,13 +218,32 @@ span.tick {
 
 	<p>Big thanks to <b>flex hd</b>!</p>
 	
-	<!-- 
-	<div class="panel" id="details">
+	<div class="panel" id="details" style="display: none;">
 		<div class="close">&#9746;</div>
-		<h3 class="servername"></h3>
+		
+		<center><h1>Join server</h1></center>
+		
+		<table class="data">
+			<tr>
+				<td>Servername:</td>
+				<td id="join_name"></td>
+			</tr>
+			<tr>
+				<td>Address:</td>
+				<td id="join_address"></td>
+			</tr>
+			<tr>
+				<td>Port:</td>
+				<td id="join_port"></td>
+			</tr>
+			<tr>
+				<td colspan=2 style="text-align: center;">
+					<button id="join-invite" class='btn green'>Join Server</button>
+				</td>
+			</tr>
+		</table>
 	</div>
-	!-->
-	 
+ 
 	<script>
 		$("#search_name").keyup(search);
 		$("#search_map").keyup(search);
@@ -298,6 +329,36 @@ span.tick {
 	}
 
 	connectToMod();
+	</script>
+	
+	<script>
+	if(findGetParameter("ip")) {
+		$("#details").show();
+		
+		var ip = findGetParameter("ip");
+		var port = findGetParameter("port");
+		
+		$("#join_address").text(ip);
+		$("#join_port").text(port);
+		$("#join_name").text(findGetParameter("name"));
+		
+		$("#join-invite").on("click", function() {
+			doJoin(ip, port);
+		});
+	}
+	
+	function findGetParameter(parameterName) {
+		var result = null,
+			tmp = [];
+		location.search
+			.substr(1)
+			.split("&")
+			.forEach(function (item) {
+			  tmp = item.split("=");
+			  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+			});
+		return result;
+	}
 	</script>
 </body>
 </html>
