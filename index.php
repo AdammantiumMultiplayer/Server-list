@@ -339,11 +339,13 @@ span.tick {
 	</script>
 	
 	<script>
-	if(findGetParameter("ip")) {
+	if(findGetParameter("key")) {
 		$("#details").show();
 		
-		var ip = findGetParameter("ip");
-		var port = findGetParameter("port");
+		var key = atob(findGetParameter("key"));
+		
+		var ip = key.split(":")[0];
+		var port = key.split(":")[1];
 		
 		$("#join_address").text(ip);
 		$("#join_port").text(port);
