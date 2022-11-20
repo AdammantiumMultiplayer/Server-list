@@ -1,8 +1,15 @@
+<html>
 <?php
 require("incl/database.php")
 ?>
 
+<head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<title>Adammantium Multiplayer Serverlist</title>
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+<link rel="manifest" href="/favicon/site.webmanifest">
 <style>
 body {
   font-family: Verdana, sans-serif;
@@ -219,7 +226,7 @@ span.tick {
 	<p>Big thanks to <b>flex hd</b>!</p>
 	
 	<div class="panel" id="details" style="display: none;">
-		<div class="close">&#9746;</div>
+		<div class="close" onclick="closeDetails();">&#9746;</div>
 		
 		<center><h1>Join server</h1></center>
 		
@@ -345,6 +352,10 @@ span.tick {
 		$("#join-invite").on("click", function() {
 			doJoin(ip, port);
 		});
+	}
+	
+	function closeDetails() {
+		$("#details").hide();
 	}
 	
 	function findGetParameter(parameterName) {
