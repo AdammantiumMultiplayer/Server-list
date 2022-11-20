@@ -244,6 +244,12 @@ span.tick {
 				<td id="join_port"></td>
 			</tr>
 			<tr>
+				<td>Password:</td>
+				<td id="join_password">
+					<input type="password" style="font-size: 20px;" autocomplete="nope" />
+				</td>
+			</tr>
+			<tr>
 				<td colspan=2 style="text-align: center;">
 					<button id="join-invite" class='btn green'>Join Server</button>
 				</td>
@@ -331,8 +337,10 @@ span.tick {
 		websocket.send(message);
 	}
 
-	function doJoin(ip, port) {
-		doSend("join:" + ip + ":" + port);
+	function doJoin(ip, port, password) {
+		var message = "join:" + ip + ":" + port + (password ? ":" + password : "");
+		console.log(message);
+		doSend(message);
 	}
 
 	connectToMod();
@@ -347,12 +355,21 @@ span.tick {
 		var ip = key.split(":")[0];
 		var port = key.split(":")[1];
 		
+		var requirePassword = findGetParameter("require_password");
+		if(requirePassword && requirePassword == 1) {
+			$("#join_password").parent().show();
+		}else{
+			$("#join_password").parent().hide();
+		}
+		
 		$("#join_address").text(ip);
 		$("#join_port").text(port);
 		$("#join_name").text(findGetParameter("name"));
 		
 		$("#join-invite").on("click", function() {
-			doJoin(ip, port);
+			var password = $("#join_password input").val();
+			
+			doJoin(ip, port, password);
 		});
 	}
 	
