@@ -291,6 +291,7 @@ span.tick {
 
 	<script>
 	var error = false;
+	var connected = false;
 	const wsUri = "ws://127.0.0.1:13698/";
 	var websocket;
 
@@ -300,9 +301,11 @@ span.tick {
 		$(".modstatus").removeClass("error");
 		
 		error = false;
+		connected = false;
 		websocket = new WebSocket(wsUri);
 		
 		websocket.onopen = (e) => {
+			connected = true;
 			console.log("CONNECTED");
 			$(".modstatus .message").text("MOD RUNNING");
 			$(".modstatus").removeClass("error");
@@ -310,6 +313,7 @@ span.tick {
 		};
 
 		websocket.onclose = (e) => {
+			connected = false;
 			console.log("DISCONNECTED");
 			if(error) {
 				$(".modstatus .message").text("MOD NOT RUNNING");
@@ -338,9 +342,13 @@ span.tick {
 	}
 
 	function doJoin(ip, port, password) {
-		var message = "join:" + ip + ":" + port + (password ? ":" + password : "");
-		console.log(message);
-		doSend(message);
+		if(connected) {
+			var message = "join:" + ip + ":" + port + (password ? ":" + password : "");
+			console.log(message);
+			doSend(message);
+		}else{
+			alert("Couldn't find the mod running, try refreshing the page.");
+		}
 	}
 
 	connectToMod();
