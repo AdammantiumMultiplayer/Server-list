@@ -4,156 +4,215 @@ require("incl/database.php")
 ?>
 
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<title>Adammantium Multiplayer Serverlist</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/site.webmanifest">
-<style>
-body {
-  font-family: Verdana, sans-serif;
-}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<title>Adammantium Multiplayer Serverlist</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/favicon/site.webmanifest">
+	<style>
+	body {
+	  font-family: Verdana, sans-serif;
+	}
 
-.title {
-	text-align: center;
-	font-size: 30px;
-	margin: 0px;
-	font-weight: bold;
-}
+	.title {
+		text-align: center;
+		font-size: 30px;
+		margin: 0px;
+		font-weight: bold;
+	}
 
-.modstatus {
-	float: right;
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-.modstatus p {
-	margin: 0px;
-}
-.modstatus .btn {
-	float: right;
-	visibility: hidden;
-}
-.modstatus.error .btn {
-    visibility: visible;
-}
-.error {
-	color: red;
-}
-.success {
-	color: green;
-}
+	.modstatus {
+		float: right;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.modstatus p {
+		margin: 0px;
+	}
+	.modstatus .btn {
+		float: right;
+		visibility: hidden;
+	}
+	.modstatus.error .btn {
+		visibility: visible;
+	}
+	.error {
+		color: red;
+	}
+	.success {
+		color: green;
+	}
 
-table.serverlist{
-	width: 100%;
-	border-collapse: collapse;
-	margin-top:20px;
-	font-size: 20px;
-}
-table.serverlist th, table.serverlist td{
-	border: 1px solid #cdcdcd;
-	padding: 7px;
-}
-table.serverlist th {
-	text-transform: uppercase;
-}
-table.serverlist .search {
-	width: 100%;
-	font-size: 20px;
-}
-table.serverlist td:nth-child(3),
-table.serverlist td:nth-child(4),
-table.serverlist td:nth-child(5),
-table.serverlist td:nth-child(6),
-table.serverlist td:nth-child(7) {
-	text-align: center;
-}
+	table.serverlist{
+		width: 100%;
+		border-collapse: collapse;
+		margin-top:20px;
+		font-size: 20px;
+	}
+	table.serverlist th, table.serverlist td{
+		border: 1px solid #cdcdcd;
+		padding: 7px;
+	}
+	table.serverlist th {
+		text-transform: uppercase;
+	}
+	table.serverlist .search {
+		width: 100%;
+		font-size: 20px;
+	}
+	table.serverlist td:nth-child(3),
+	table.serverlist td:nth-child(4),
+	table.serverlist td:nth-child(5),
+	table.serverlist td:nth-child(6),
+	table.serverlist td:nth-child(7) {
+		text-align: center;
+	}
 
-table.serverlist .description {
-	display: flex;
-	color: #2e2e2e;
-	font-size: 15px;
-}
+	table.serverlist .description {
+		display: flex;
+		color: #2e2e2e;
+		font-size: 15px;
+	}
 
-span.tick {
-	float: left;
-    background-color: #0ab5ec;
-    color: white;
-    border-radius: 50%;
-    margin-right: 10px;
-    font-weight: bold;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    vertical-align: middle;
-	cursor: default;
-}
+	span.tick {
+		float: left;
+		background-color: #0ab5ec;
+		color: white;
+		border-radius: 50%;
+		margin-right: 10px;
+		font-weight: bold;
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		vertical-align: middle;
+		cursor: default;
+	}
 
-.btn {
-	border: none;
-	color: white;
-	padding: 14px 28px;
-	cursor: pointer;
-}
-.btn.green {
-	background-color: #04AA6D;
-}
-.btn.green:hover {
-	background-color: #46a049;
-}
-.btn.blue {
-	background-color: #0499aa;
-}
-.btn.blue:hover {
-	background-color: #008291;
-}
-.btn.red {
-	background-color: #ff0404;
-}
-.btn.red:hover {
-	background-color: #a60202;
-}
+	.btn {
+		border: none;
+		color: white;
+		padding: 14px 28px;
+		cursor: pointer;
+	}
+	.btn.green {
+		background-color: #04AA6D;
+	}
+	.btn.green:hover {
+		background-color: #46a049;
+	}
+	.btn.blue {
+		background-color: #0499aa;
+	}
+	.btn.blue:hover {
+		background-color: #008291;
+	}
+	.btn.red {
+		background-color: #ff0404;
+	}
+	.btn.red:hover {
+		background-color: #a60202;
+	}
 
-.panel {
-	background-color: white;
-	border: 1px solid lightgray;
-	min-height: 360px;
-	min-width: 540px;
-	height: 60%;
-	width: 70%;
-	position: fixed;
-	top: 0px; right: 0px; bottom: 0px; left: 0px;
-	margin: auto;
-}
-.panel .close {
-	float: right;
-	position: relative;
-	top: 3px;
-	right: 3px;
-	font-size: 30px;
-	cursor: pointer;
-	line-height: 0.8;
-}
-.panel .close:hover {
-	color: red;
-}
+	.panel {
+		background-color: white;
+		border: 1px solid lightgray;
+		min-height: 360px;
+		min-width: 540px;
+		height: 60%;
+		width: 70%;
+		position: fixed;
+		top: 0px; right: 0px; bottom: 0px; left: 0px;
+		margin: auto;
+	}
+	.panel .close {
+		float: right;
+		position: relative;
+		top: 3px;
+		right: 3px;
+		font-size: 30px;
+		cursor: pointer;
+		line-height: 0.8;
+	}
+	.panel .close:hover {
+		color: red;
+	}
 
-.panel .data {
-	font-size: 25px;
-	position: fixed;
-	top: 0px; right: 0px; bottom: 0px; left: 0px;
-	margin: auto;
-	border-spacing: 8px;
-}
+	.panel .data {
+		font-size: 25px;
+		position: fixed;
+		top: 0px; right: 0px; bottom: 0px; left: 0px;
+		margin: auto;
+		border-spacing: 8px;
+	}
 
-.panel .data tr td:first-child {
-	text-align: right;
-}
-</style>
+	.panel .data tr td:first-child {
+		text-align: right;
+	}
+	
+	.alert {
+		z-index: 50;
+		position: relative;
+		padding: 0.75rem 1.25rem;
+		margin-bottom: 1rem;
+		border: 1px solid transparent;
+		border-radius: 0.25rem;
+		position: fixed;
+		top: 5px;
+		left: 5px;
+		right: 5px;
+	}
+	
+	.alert-primary {
+		color: #004085;
+		background-color: #cce5ff;
+		border-color: #b8daff;
+	}
+	
+	.alert-success {
+		color: #155724;
+		background-color: #d4edda;
+		border-color: #c3e6cb;
+	}
+	
+	.alert-danger {
+		color: #721c24;
+		background-color: #f8d7da;
+		border-color: #f5c6cb;
+	}
+	
+	.close {
+		float: right;
+		font-size: 1.5rem;
+		font-weight: 700;
+		line-height: 1;
+		color: #000;
+		text-shadow: 0 1px 0 #fff;
+		opacity: .5;
+	}
+	
+	.close:focus, .close:hover {
+	    color: #000;
+		text-decoration: none;
+		opacity: .75;
+	}
+	
+	button.close {
+		cursor: pointer;
+		padding: 0;
+		background-color: transparent;
+		border: 0;
+		-webkit-appearance: none;
+		position: absolute;
+		padding: 0.75rem 1.25rem;
+		top: 0;
+		right: 0;
+	}
+	</style>
 </head>
 <body>
 	<p class="title">Adammantium Multiplayer</p>
@@ -328,6 +387,17 @@ span.tick {
 
 		websocket.onmessage = (e) => {
 			console.log("RESPONSE: " + e.data);
+			
+			var splits = e.data.split('|');
+			
+			switch(splits[0]) {
+				case "ERROR":
+					showMessage(splits[1], "danger");
+					break;
+				case "INFO":
+					showMessage(splits[1]);
+					break;
+			}
 		};
 
 		websocket.onerror = (e) => {
@@ -396,6 +466,22 @@ span.tick {
 			  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
 			});
 		return result;
+	}
+	
+	function showMessage(message, type = "primary") {
+		$("body .alert").remove();
+	
+		$("body").append(`
+				<div class="alert alert-` + type + `">
+					` + message + `
+					<button type="button" class="close" aria-label="Close" onclick="dismissMessage(this);">
+						<span>&times;</span>
+					</button>
+				</div>`);
+	}
+	
+	function dismissMessage(element) {
+		$(element).parent().remove();
 	}
 	</script>
 </body>
