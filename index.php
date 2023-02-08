@@ -262,7 +262,7 @@ require("incl/database.php")
 				echo "<td>
 						".htmlspecialchars_decode($row["version"])."<br>
 						PvP: ".decode_boolean($row["pvp"])."<br>
-						Static Map: ".decode_boolean($row["static_map"])."<br>
+						Map changable: ".decode_boolean($row["static_map"])."<br>
 					 </td>";
 				
 				echo "<td>{$row["modus"]} @ {$row["map"]}</td>";
