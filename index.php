@@ -260,14 +260,14 @@ require("incl/database.php")
 				echo "<td>".$servername."</td>";
 				
 				echo "<td>
-						v".htmlspecialchars_decode($row["version"])."<br>
+						".htmlspecialchars_decode($row["version"])."<br>
 						PvP: ".decode_boolean($row["pvp"])."<br>
 						Static Map: ".decode_boolean($row["static_map"])."<br>
 					 </td>";
 				
 				echo "<td>{$row["modus"]} @ {$row["map"]}</td>";
-				//echo "<td>{$row["players_connected"]} / {$row["players_max"]}</td>";
-				echo "<td>? / {$row["players_max"]}</td>";
+				echo "<td>{$row["players_connected"]} / {$row["players_max"]}</td>";
+				//echo "<td>? / {$row["players_max"]}</td>";
 				echo "<td>".htmlspecialchars_decode($row["address"]).":{$row["port"]}</td>";
 				echo "<td>
 						<details style='display: none;'>
