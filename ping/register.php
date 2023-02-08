@@ -1,5 +1,6 @@
 <?php
 require("../incl/database.php");
+require("func.php");
 
 header('Content-Type: application/json');
 
@@ -37,7 +38,7 @@ if(isset($data['port'])) {
 	
 	$statement = $conn->prepare("CALL REGISTER_SERVER(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 	$ok = $statement->execute([
-			/* ADDRESS     */  trim($_SERVER['REMOTE_ADDR']),
+			/* ADDRESS     */  trim(getAddress()),
 			/* PORT        */  trim(intval($data['port'] ?? 0)),
 			/* SERVERNAME  */  trim($data['name'] ?? 'No name'),
 			/* DESCRIPTION */  trim($data['description'] ?? 'No description'),

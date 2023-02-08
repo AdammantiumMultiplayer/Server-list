@@ -1,5 +1,6 @@
 <?php
 require("../incl/database.php");
+require("func.php");
 
 header('Content-Type: application/json');
 
@@ -13,7 +14,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 if(isset($data['port'])) {
 	$statement = $conn->prepare("CALL UNREGISTER_SERVER(?, ?);");
 	$ok = $statement->execute([
-			/* ADDRESS     */  trim($_SERVER['REMOTE_ADDR']),
+			/* ADDRESS     */  trim(getAddress()),
 			/* PORT        */  trim(intval($data['port'] ?? 0))
 							]);
 	echo json_encode(["ok" => $ok]);

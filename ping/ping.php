@@ -1,5 +1,6 @@
 <?php
 require("../incl/database.php");
+require("func.php");
 
 header('Content-Type: application/json');
 
@@ -15,7 +16,7 @@ if(isset($data['port'])) {
 
 	$statement = $conn->prepare("CALL PING_SERVER(?, ?, ?, ?, ?);");
 	$ok = $statement->execute([
-			/* ADDRESS         */  trim($_SERVER['REMOTE_ADDR']),
+			/* ADDRESS         */  trim(getAddress()),
 			/* PORT            */  trim(intval($data['port'] ?? '0')),
 			/* CURRENT_PLAYERS */  trim(intval($data['players'] ?? '0')),
 			/* CURRENT_MAP     */  trim($data['map'] ?? '?'),
