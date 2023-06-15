@@ -16,10 +16,11 @@ require("incl/database.php")
 	}
 
 	.title {
-		text-align: center;
+		text-align: left;
 		font-size: 30px;
 		margin: 0px;
 		font-weight: bold;
+		margin-left: 20px;
 	}
 
 	.modstatus {
@@ -39,6 +40,10 @@ require("incl/database.php")
 	}
 	.modstatus.error .btn {
 		visibility: visible;
+	}
+	.modstatus.error {
+		background-color: #ddd;
+		padding: 5px;
 	}
 	.error {
 		color: red;
@@ -212,6 +217,10 @@ require("incl/database.php")
 		top: 0;
 		right: 0;
 	}
+	
+	.message {
+		text-align: right;
+	}
 	</style>
 </head>
 <body>
@@ -375,7 +384,7 @@ require("incl/database.php")
 			connected = false;
 			console.log("DISCONNECTED");
 			if(error) {
-				$(".modstatus .message").text("MOD NOT RUNNING");
+				$(".modstatus .message").html("COULD NOT CONNECT TO MOD<h5 style='margin-block: 0px;'>Make sure the mod is running or<br>try to disable your AdBlock</h5>");
 				$(".modstatus").removeClass("success");
 				$(".modstatus").addClass("error");
 			}else{
