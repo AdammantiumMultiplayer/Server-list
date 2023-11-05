@@ -62,7 +62,7 @@ require("incl/database.php")
 				}
 			}
 			
-			$result = executeQuery("select * from serverlist order by official desc, servername");
+			$result = executeQuery("select * from serverlist where last_update > NOW() - INTERVAL 5 MINUTE order by official desc, servername;");
 			foreach($result as $row) {
 				echo "<tr class='server'>";
 				
