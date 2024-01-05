@@ -87,7 +87,7 @@ if(findGetParameter("key")) {
 	`);
 	
 	setTimeout(function() {
-		$("#serverlist tr.server:first").click();
+		$("#serverlist tr.server:first td:first").click();
 	}, 100);
 	
 	//showDetails(findGetParameter("name"), ip, port, requirePassword && requirePassword == 1, "", "");
