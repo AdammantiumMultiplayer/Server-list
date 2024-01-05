@@ -232,6 +232,23 @@ button.close {
     text-align: right;
 }
 
+.map-image {
+    width: 64px;
+    height: 64px;
+    position: relative;
+	
+	left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.map-image img,
+.map-image object {
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
 .map-preview, .map-preview img {
     width: 64px;
 }

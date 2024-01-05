@@ -83,10 +83,15 @@ require("incl/database.php")
 					 </td>";
 				
 				echo "<td>
-						<object class='map-preview' data='/img/maps/".strtolower($row["map"]).".jpg' type='image/png'>
-							<img src='/img/AMP.jpg' alt='{$row["map"]}'>
-						</object>
-						<br>
+						<div class='map-image'>
+							<object class='map-preview' data='/img/maps/".strtolower($row["map"]).".jpg' type='image/jpeg'>
+								<img src='/img/AMP.jpg' alt='{$row["map"]}'>
+							</object>
+							<object class='gamemode-preview' data='/img/mode/".strtolower($row["modus"]).".png' type='image/png'>
+								<img src='/img/AMP.jpg' alt='{$row["modus"]}'>
+							</object>
+						</div>
+						
 						{$row["modus"]} @ {$row["map"]}
 						</td>";
 				
