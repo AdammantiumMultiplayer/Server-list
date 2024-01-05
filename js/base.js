@@ -35,7 +35,9 @@ function infoRow(row) {
     var port = parseInt(address.split(':')[1]);
 
     var servername = $($(row).closest("tr").find("td")[1]).find("span")[0].innerText;
-
+	
+	var requirePassword = servername.endsWith(" 🔒");
+	
     var map = $(row).closest("tr").find("td")[3].innerText;
     var mode;
     if(map.length > 0) {
@@ -44,7 +46,7 @@ function infoRow(row) {
         mode = splits[0].replace("\n", "");
     }
 
-    showDetails(servername, ip, port, false, map, mode);
+    showDetails(servername, ip, port, requirePassword, map, mode);
 }
 
 if(findGetParameter("key")) {
@@ -55,7 +57,40 @@ if(findGetParameter("key")) {
     
     var requirePassword = findGetParameter("require_password");
 
-    showDetails(findGetParameter("name"), ip, port, requirePassword && requirePassword == 1, "", "");
+	var name = findGetParameter("name");
+	
+	if(requirePassword == "1") {
+		name += " 🔒";
+	}
+    
+	$("#serverlist tr:nth-child(2)").after(`
+	<tr class="server">
+		<td><img src="/img/discord.jpg"></td>
+		<td><span>` + name + `</span><span class="description">Shared server hosted by the discord bot.<br>This is only visible to you.</span></td>
+		<td>
+			PvP: <span style="color: green; font-weight: bold;">&#9745;</span><br>
+			Map changable: <span style="color: green; font-weight: bold;">&#9745;</span>
+		</td>
+		<td>
+		<object class="map-preview" data="/img/maps/discord.jpg" type="image/png">
+			<img src="/img/AMP.jpg" alt="Arena">
+		</object>
+		<br>
+		
+		</td>
+		<td></td>
+		<td>` + ip + `:` + port + `</td>
+		<td>
+		<button onclick="joinRow(this)" class="btn green">Join</button>
+		</td>
+	</tr>
+	`);
+	
+	setTimeout(function() {
+		$("#serverlist tr:nth-child(3) td:first").click();
+	}, 100);
+	
+	//showDetails(findGetParameter("name"), ip, port, requirePassword && requirePassword == 1, "", "");
 }
 
 function showDetails(servername, ip, port, require_password, map, mode) {

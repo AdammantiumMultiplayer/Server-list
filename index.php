@@ -4,7 +4,7 @@ require("incl/database.php")
 ?>
 
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="/js/jquery-3.7.1.min.js"></script>
 	<title>Adammantium Multiplayer Serverlist</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
