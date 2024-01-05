@@ -246,6 +246,8 @@ button.close {
 .map-image object {
 	top: 0;
 	left: 0;
+    width: 64px;
+    height: 64px;
 	position: absolute;
 }
 
