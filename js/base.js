@@ -63,7 +63,7 @@ if(findGetParameter("key")) {
 		name += " 🔒";
 	}
     
-	$("#serverlist tr:nth-child(2)").after(`
+	$("#serverlist tbody").prepend(`
 	<tr class="server">
 		<td><img src="/img/discord.jpg"></td>
 		<td><span>` + name + `</span><span class="description">Shared server hosted by the discord bot.<br>This is only visible to you.</span></td>
