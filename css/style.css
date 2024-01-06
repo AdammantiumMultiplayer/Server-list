@@ -48,10 +48,13 @@ body {
 }
 
 table.serverlist{
-    width: 100%;
+    width: calc(100% - 600px);
     border-collapse: collapse;
     margin-top:40px;
     font-size: 20px;
+}
+table.serverlist th {
+    background-color: #dbdbdb;
 }
 table.serverlist tr:nth-child(1) th {
     border-bottom: none;
@@ -84,8 +87,12 @@ table.serverlist .description {
     color: #2e2e2e;
     font-size: 15px;
 }
+table.serverlist .note {
+    color: #d24545;
+    font-size: 15px;
+}
 
-table.serverlist tr.selected {
+table.serverlist tr.active {
     background-color: rgb(213, 252, 229) !important;
 }
 table.serverlist tr:hover td {
@@ -113,6 +120,7 @@ span.tick {
     color: white;
     padding: 14px 28px;
     cursor: pointer;
+    border-radius: 5px;
 }
 .btn.green {
     background-color: #04AA6D;
@@ -232,9 +240,81 @@ button.close {
     text-align: right;
 }
 
-.map-image {
+
+div.serverinfo {
+    width: 590px;
+    right: 8px;
+    top: 118px;
+    position: fixed;
+    border: 1px solid #cdcdcd;
+    text-align: center;
+    max-height: calc(100% - 150px);
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+.serverinfo hr {
+    border: 1px solid #e5e5e5;
+}
+
+.serverinfo h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.serverinfo h2 {
+    font-weight: normal;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.serverinfo .description {
+    text-align: justify;
+    padding: 0px 20px;
+}
+
+@media screen and (max-width: 1500px) {
+    div.serverinfo {
+        width: 490px;
+    }
+    table.serverlist{
+        width: calc(100% - 500px);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    div.serverinfo {
+        width: 350px;
+    }
+    table.serverlist{
+        width: calc(100% - 360px);
+    }
+}
+
+
+.serverlist .map-image,
+.serverlist .map-image img,
+.serverlist .map-image object,
+.session-details .map-preview,
+.session-details .map-preview img {
     width: 64px;
     height: 64px;
+}
+
+.serverinfo .map-image,
+.serverinfo .map-image img,
+.serverinfo .map-image object  {
+    width: 256px;
+    height: 256px;
+}
+.serverinfo .map-image .gamemode-preview  {
+    width: 200px;
+    height: 200px;
+    left: 28px;
+    top: 28px;
+}
+
+.map-image {
     position: relative;
 	
 	left: 0;
@@ -246,14 +326,5 @@ button.close {
 .map-image object {
 	top: 0;
 	left: 0;
-    width: 64px;
-    height: 64px;
 	position: absolute;
-}
-
-.map-preview, .map-preview img {
-    width: 64px;
-}
-.map-preview-lg, .map-preview-lg img {
-    width: 128px;
 }

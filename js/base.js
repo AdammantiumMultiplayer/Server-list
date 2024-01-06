@@ -29,6 +29,10 @@ function joinRow(row) {
 }
 
 function infoRow(row) {
+    $("#serverlist tr.active").removeClass("active");
+
+    $(row).closest("tr").addClass("active");
+
     var address = $(row).closest("tr").find("td")[5].innerText;
 
     var ip = address.split(':')[0];
@@ -36,17 +40,67 @@ function infoRow(row) {
 
     var servername = $($(row).closest("tr").find("td")[1]).find("span")[0].innerText;
 	
+    var description = $($(row).closest("tr").find("td")[1]).find("span.description")[0].innerText;
+
 	var requirePassword = servername.endsWith(" 🔒");
-	
+	var official = $($(row).closest("tr").find("td")[1]).find("span.tick").length == 1;
+
+    var players = $($(row).closest("tr").find("td")[4])[0].innerText;
+
     var map = $(row).closest("tr").find("td")[3].innerText;
-    var mode;
-    if(map.length > 0) {
-        var splits = map.split(" @ ");
-        map = splits[1];
-        mode = splits[0].replace("\n", "");
+
+    if(requirePassword) {
+        $('#join-btn').text("🔒 Join 🔒");
+    }else{
+        $('#join-btn').text("Join");
+    }
+    
+    $('#join-btn').unbind('click');
+    $("#join-btn").on("click", function() {
+        //var password = $("#join_password input").val();
+        var password = undefined;
+        if(requirePassword) {
+            password = prompt("Password:");
+            if(password == null) return;
+        }
+
+        doJoin(ip, port, password);
+    });
+
+    $(".serverinfo .map-image").empty();
+    $(".serverinfo .map-image").append("data", $($(row).closest("tr")).find(".map-preview").clone());
+    $(".serverinfo .map-image").append("data", $($(row).closest("tr")).find(".gamemode-preview").clone());
+
+    $(".serverinfo .address").text(ip);
+    $(".serverinfo .port").text(port);
+    $(".serverinfo .name").text(servername);
+    $(".serverinfo .description").text(description);
+    $(".serverinfo .info").html($($(row).closest("tr").find("td")[2]).html());
+    $(".serverinfo .gamemode").text(map);
+
+    if(official) {
+        $(".serverinfo .name").css("color", "#0c8fb9");
+    } else {
+        $(".serverinfo .name").css("color", "");
     }
 
-    showDetails(servername, ip, port, requirePassword, map, mode);
+    /*
+    $('#join-invite').unbind('click');
+    $("#join-invite").on("click", function() {
+        var password = $("#join_password input").val();
+        
+        doJoin(ip, port, password);
+    });
+
+    if(map && mode && map.length > 0 && mode.length > 0) {
+        $("#map_info").show();
+        $("#map_info span").text(mode + " @ " + map);
+        $("#map_info object").attr("data", "/img/maps/" + map.toLowerCase() + ".jpg");
+    }else{
+        $("#map_info").hide();
+    }
+    */
+    //showDetails(servername, ip, port, requirePassword, map, mode);
 }
 
 if(findGetParameter("key")) {
@@ -66,29 +120,23 @@ if(findGetParameter("key")) {
 	$("#serverlist tbody").prepend(`
 	<tr class="server">
 		<td><img src="/img/discord.jpg"></td>
-		<td><span>` + name + `</span><span class="description">Shared server hosted by the discord bot.<br>This is only visible to you.</span></td>
+		<td><span>` + name + `</span><span class="description">Shared server hosted by the discord bot.</span><span class='note'>This is only visible to you.</span></td>
+		<td style="display: none;">
+            PvP: <span style="color: green; font-weight: bold;">☑</span>
+            <br>
+            Map changable: <span style="color: green; font-weight: bold;">☑</span>
+        </td>
 		<td>
-			PvP: <span style="color: green; font-weight: bold;">&#9745;</span><br>
-			Map changable: <span style="color: green; font-weight: bold;">&#9745;</span>
+            <div class='map-image'>
+                <object class="map-preview" data="/img/maps/discord.jpg" type="image/png">
+                    <img src="/img/AMP.jpg" alt="Arena">
+                </object>
+            </div>
 		</td>
-		<td>
-		<object class="map-preview" data="/img/maps/discord.jpg" type="image/png">
-			<img src="/img/AMP.jpg" alt="Arena">
-		</object>
-		<br>
-		
-		</td>
-		<td></td>
-		<td>` + ip + `:` + port + `</td>
-		<td>
-		<button onclick="joinRow(this)" class="btn green">Join</button>
-		</td>
+		<td>?/?</td>
+		<td style="display: none;">` + ip + `:` + port + `</td>
 	</tr>
 	`);
-	
-	setTimeout(function() {
-		$("#serverlist tr.server:first td:first").click();
-	}, 100);
 	
 	//showDetails(findGetParameter("name"), ip, port, requirePassword && requirePassword == 1, "", "");
 }
@@ -155,8 +203,18 @@ function dismissMessage(element) {
     $(element).parent().remove();
 }
 
-
+function decode_boolean(str) {
+    if(str == "true") {
+        return "<span style='color: green; font-weight: bold;'>&#9745;</span>";
+    }else{
+        return "<span style='color: red; font-weight: bold;'>&#9746;</span>";
+    }
+}
 
 $("tr.server").find("td:not(:last)").click(function() {
     infoRow(this);
 });
+	
+setTimeout(function() {
+    $("#serverlist tr.server:first td:first").click();
+}, 100);

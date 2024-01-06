@@ -10,7 +10,7 @@ require("incl/database.php")
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 	<link rel="manifest" href="/favicon/site.webmanifest">
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css?version=1">
 </head>
 <body>
 	<p class="title">Adammantium Multiplayer</p>
@@ -36,20 +36,22 @@ require("incl/database.php")
 			<tr>
 				<th style="width: 64px;"></th>
 				<th>Server name</th>
+				<!--
 				<th>Info</th>
+				-->
 				<th>Map</th>
 				<th>Players</th>
-				<th>Address</th>
-				<th style="width: 90px;">actions</th>
+				<!--<th>Address</th>-->
+				<!--<th style="width: 90px;">actions</th>-->
 			</tr>
 			<tr>
 				<th></th>
 				<th><input type="text" class="search" id="search_name" /></th>
-				<th></th>
+				<!--<th></th>-->
 				<th><input type="text" class="search" id="search_map" /></th>
 				<th></th>
-				<th><input type="text" class="search" id="search_ip" /></th>
-				<th></th>
+				<!--<th><input type="text" class="search" id="search_ip" /></th>-->
+				<!--<th></th>-->
 			</tr>
 		</thead>
 		<tbody>
@@ -76,7 +78,7 @@ require("incl/database.php")
 				
 				echo "<td>".$servername."</td>";
 				
-				echo "<td>
+				echo "<td style='display: none;'>
 						".htmlspecialchars_decode($row["version"])."<br>
 						PvP: ".decode_boolean($row["pvp"])."<br>
 						Map changable: ".decode_boolean($row["static_map"])."<br>
@@ -95,24 +97,39 @@ require("incl/database.php")
 						{$row["modus"]} @ {$row["map"]}
 						</td>";
 				
-				echo "<td>{$row["players_connected"]} / {$row["players_max"]}</td>";
+				echo "<td>{$row["players_connected"]}/{$row["players_max"]}</td>";
 				//echo "<td>? / {$row["players_max"]}</td>";
-				echo "<td>".htmlspecialchars_decode($row["address"]).":{$row["port"]}</td>";
-				echo "<td>
+				echo "<td style='display: none;'>".htmlspecialchars_decode($row["address"]).":{$row["port"]}</td>";
+				/*echo "<td>
 						<details style='display: none;'>
 							<description>".htmlspecialchars_decode($row["description"])."</description>
 						</details>
 						<!--<button onclick='infoRow(this)' class='btn blue'>Info</button>--!>
 						<button onclick='joinRow(this)' class='btn green'>Join</button>
-					  </td>";
+					  </td>";*/
 				echo "</tr>";
 			}
 			?>
 		</tbody>
 	</table>
 	
+	<div class="serverinfo">
+		<h1 class="name">Test</h1>
+		<div class='map-image'>
+		</div>
+		<h2 class="gamemode"></h2>
+		<h2 class="description"></h2>
+		<hr>
+		<h2 class="info"></h2>
+		<hr>
+		<h2 class="full_address"><span class="address"></span>:<span class="port"></span></h2>
+		<hr>
+		<button id="join-btn" style="width: 250px; height: 60px; font-size: 30px; padding: 5px 5px 10px 5px;" class='btn green'>Join</button>
+	</div>
+
 	<p>Big thanks to <b>flex hd</b>!</p>
 	
+	<!--
 	<div class="panel" id="details" style="display: none;">
 		<div class="close" onclick="closeDetails();">&#9746;</div>
 		
@@ -153,8 +170,9 @@ require("incl/database.php")
 			</tr>
 		</table>
 	</div>
+	-->
 
-	<script src="js/base.js"></script>
-	<script src="js/mod-communication.js"></script>
+	<script src="js/base.js?version=1"></script>
+	<script src="js/mod-communication.js?version=1"></script>
 </body>
 </html>
