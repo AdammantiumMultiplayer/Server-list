@@ -5,7 +5,7 @@ $("#search_ip").keyup(search);
 function search() {
     filter_name = $("#search_name").val().toLowerCase();
     filter_map  = $("#search_map").val().toLowerCase();
-    filter_ip	= $("#search_ip").val().toLowerCase();
+    //filter_ip	= $("#search_ip").val().toLowerCase();
     
     $("#serverlist tr").filter(function() {
         var columns = $(this).find("td");
@@ -13,8 +13,8 @@ function search() {
         
         $(this).toggle(	(filter_name.length > 0 && columns[1].innerText.toLowerCase().indexOf(filter_name) > -1)
                       ||(filter_map.length  > 0 && columns[3].innerText.toLowerCase().indexOf(filter_map)  > -1)
-                      ||(filter_ip.length   > 0 && columns[5].innerText.toLowerCase().indexOf(filter_ip)   > -1)
-                      ||(filter_name.length == 0 && filter_ip.length == 0 && filter_map.length == 0)
+                      //||(filter_ip.length   > 0 && columns[5].innerText.toLowerCase().indexOf(filter_ip)   > -1)
+                      ||(filter_name.length == 0 && /*filter_ip.length == 0 &&*/ filter_map.length == 0)
                       );
     });
 }
