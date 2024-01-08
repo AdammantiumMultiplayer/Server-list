@@ -12,6 +12,8 @@ function getAddress() {
 		$address = "us-amp.adamite.de";
 	} else if($address == "85.215.226.233") {
 		$address = "nexusrealms.de";
+	} else if($address == "192.168.178.100") {
+		$address = "dev.devforce.de";
 	} else {
 		$address = gethostbyaddr($address);
 	}

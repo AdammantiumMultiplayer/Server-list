@@ -20,7 +20,12 @@ if(isset($data['port'])) {
 		}
 	}
 	
-	$statement = $conn->prepare("CALL REGISTER_SERVER(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+	$password = 0;
+	if(isset($data["password"])) {
+		$password = $data["password"];
+	}
+	
+	$statement = $conn->prepare("CALL REGISTER_SERVER(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
 	$ok = $statement->execute([
 			/* ADDRESS     */  trim(getAddress()),
 			/* PORT        */  trim(intval($data['port'] ?? 0)),
@@ -33,6 +38,7 @@ if(isset($data['port'])) {
 			/* VERSION     */  trim($data['version'] ?? '?'),
 			/* PVP         */  trim(intval($data['pvp_enabled'] ?? '1')),
 			/* STATIC_MAP  */  trim(intval($data['static_map'] ?? '1')),
+			/* USE_PASSWORD*/  trim(intval($password ?? '1'))
 							]);
 	echo json_encode(["ok" => $ok]);
 }else{

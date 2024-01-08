@@ -1,16 +1,17 @@
+<!DOCTYPE html>
 <html>
 <?php
 require("incl/database.php")
 ?>
 
 <head>
-	<script src="/js/jquery-3.7.1.min.js"></script>
 	<title>Adammantium Multiplayer Serverlist</title>
 	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 	<link rel="manifest" href="/favicon/site.webmanifest">
 	<link rel="stylesheet" type="text/css" href="/css/style.css?version=1">
+	<meta name="description" content="Public Serverlist of the AMP Mod for Blade & Sorcery VR.">
 </head>
 <body>
 	<p class="title">Adammantium Multiplayer</p>
@@ -24,7 +25,7 @@ require("incl/database.php")
 			</div>
 			<div style="float: right;">
 				<object class='map-preview' data='' type='image/png'>
-					<img src='/img/AMP.jpg' alt=''>
+					<img src='/img/AMP.webp' alt=''>
 				</object>
 			</div>
 		</div>
@@ -70,7 +71,7 @@ require("incl/database.php")
 				
 				echo "<td><img src='data:image/png;base64,".htmlspecialchars_decode($row["servericon"])."'></img></td>";
 				
-				$servername = "<span>".htmlspecialchars_decode($row["servername"])."</span>";
+				$servername = "<span>".htmlspecialchars_decode($row["servername"]).($row["has_password"] ? " 🔒" : "")."</span>";
 				if($row["official"]) {
 					$servername .= "<span title='This is a offical server' class='tick'>✓</span>";
 				}
@@ -86,11 +87,11 @@ require("incl/database.php")
 				
 				echo "<td>
 						<div class='map-image'>
-							<object class='map-preview' data='/img/maps/".strtolower($row["map"]).".jpg' type='image/jpeg'>
-								<img src='/img/AMP.jpg' alt='{$row["map"]}'>
+							<object class='map-preview' data='/img/maps/".strtolower($row["map"]).".webp' type='image/jpeg'>
+								<img src='/img/AMP.webp' alt='{$row["map"]}'>
 							</object>
-							<object class='gamemode-preview' data='/img/mode/".strtolower($row["modus"]).".png' type='image/png'>
-								<img src='/img/AMP.jpg' alt='{$row["modus"]}'>
+							<object class='gamemode-preview' data='/img/mode/".strtolower($row["modus"]).".webp' type='image/png'>
+								<img src='/img/AMP.webp' alt='{$row["modus"]}'>
 							</object>
 						</div>
 						
@@ -171,7 +172,8 @@ require("incl/database.php")
 		</table>
 	</div>
 	-->
-
+	
+	<script src="/js/jquery-3.7.1.min.js"></script>
 	<script src="js/base.js?version=1"></script>
 	<script src="js/mod-communication.js?version=1"></script>
 </body>
