@@ -19,7 +19,7 @@ body {
 
 .modstatus {
     float: right;
-    position: absolute;
+    position: fixed;
     top: 5px;
     right: 9px;
     text-transform: uppercase;
