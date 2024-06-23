@@ -1,294 +1,294 @@
 @font-face {
-    font-family: 'Roboto';
-    src: url('/font/Roboto-Medium.ttf');
-    font-weight: 200;
-    font-style: italic;
+	font-family: 'Roboto';
+	src: url('/font/Roboto-Medium.ttf');
+	font-weight: 200;
+	font-style: italic;
 }
 
 body {
-    font-family: 'Roboto', Verdana, sans-serif;
+	font-family: 'Roboto', Verdana, sans-serif;
 }
 
 .title {
-    text-align: left;
-    font-size: 30px;
-    margin: 0px;
-    font-weight: bold;
-    margin-left: 20px;
+	text-align: left;
+	font-size: 30px;
+	margin: 0px;
+	font-weight: bold;
+	margin-left: 20px;
 }
 
 .modstatus {
-    float: right;
-    position: fixed;
-    top: 5px;
-    right: 9px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 5px;
+	float: right;
+	position: fixed;
+	top: 5px;
+	right: 9px;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 5px;
 }
 .modstatus p {
-    margin: 0px;
+	margin: 0px;
 }
 .modstatus .btn {
-    float: right;
-    display: none;
+	float: right;
+	display: none;
 }
 .modstatus.error .btn {
-    display: block;
+	display: block;
 }
 .modstatus.error {
-    border: 1px solid #cdcdcd
+	border: 1px solid #cdcdcd
 }
 .error {
-    color: red;
+	color: red;
 }
 .success {
-    color: green;
-    border: 1px solid #cdcdcd
+	color: green;
+	border: 1px solid #cdcdcd
 }
 
 table.serverlist{
-    width: calc(100% - 600px);
-    border-collapse: collapse;
-    margin-top:40px;
-    font-size: 20px;
+	width: calc(100% - 600px);
+	border-collapse: collapse;
+	margin-top:40px;
+	font-size: 20px;
 }
 table.serverlist th {
-    background-color: #dbdbdb;
+	background-color: #dbdbdb;
 }
 table.serverlist tr:nth-child(1) th {
-    border-bottom: none;
+	border-bottom: none;
 }
 table.serverlist tr:nth-child(2) th {
-    border-top: none;
-    padding: 0px 5px 5px 5px;
+	border-top: none;
+	padding: 0px 5px 5px 5px;
 }
 table.serverlist th, table.serverlist td {
-    border: 1px solid #cdcdcd;
-    padding: 7px;
+	border: 1px solid #cdcdcd;
+	padding: 7px;
 }
 table.serverlist th {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 table.serverlist .search {
-    width: 100%;
-    font-size: 20px;
+	width: 100%;
+	font-size: 20px;
 }
 table.serverlist td:nth-child(3),
 table.serverlist td:nth-child(4),
 table.serverlist td:nth-child(5),
 table.serverlist td:nth-child(6),
 table.serverlist td:nth-child(7) {
-    text-align: center;
+	text-align: center;
 }
 
 table.serverlist .description {
-    display: flex;
-    color: #2e2e2e;
-    font-size: 15px;
+	display: flex;
+	color: #2e2e2e;
+	font-size: 15px;
 }
 table.serverlist .note {
-    color: #d24545;
-    font-size: 15px;
+	color: #d24545;
+	font-size: 15px;
 }
 
 table.serverlist tr.active {
-    background-color: rgb(213, 252, 229) !important;
+	background-color: rgb(213, 252, 229) !important;
 }
 table.serverlist tr:hover td {
-    background-color: rgb(238, 255, 245);
-    cursor: pointer;
+	background-color: rgb(238, 255, 245);
+	cursor: pointer;
 }
 
 span.tick {
-    float: left;
-    background-color: #0ab5ec;
-    color: white;
-    border-radius: 50%;
-    margin-right: 10px;
-    font-weight: bold;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    vertical-align: middle;
-    cursor: default;
+	float: left;
+	background-color: #0ab5ec;
+	color: white;
+	border-radius: 50%;
+	margin-right: 10px;
+	font-weight: bold;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: default;
 }
 
 .btn {
-    border: none;
-    color: white;
-    padding: 14px 28px;
-    cursor: pointer;
-    border-radius: 5px;
+	border: none;
+	color: white;
+	padding: 14px 28px;
+	cursor: pointer;
+	border-radius: 5px;
 }
 .btn.green {
-    background-color: #04AA6D;
+	background-color: #04AA6D;
 }
 .btn.green:hover {
-    background-color: #46a049;
+	background-color: #46a049;
 }
 .btn.blue {
-    background-color: #0499aa;
+	background-color: #0499aa;
 }
 .btn.blue:hover {
-    background-color: #008291;
+	background-color: #008291;
 }
 .btn.red {
-    background-color: #ff0404;
+	background-color: #ff0404;
 }
 .btn.red:hover {
-    background-color: #a60202;
+	background-color: #a60202;
 }
 
 .panel {
-    background-color: white;
-    border: 1px solid lightgray;
-    min-height: 360px;
-    min-width: 540px;
-    height: 60%;
-    width: 70%;
-    position: fixed;
-    top: 0px; right: 0px; bottom: 0px; left: 0px;
-    margin: auto;
+	background-color: white;
+	border: 1px solid lightgray;
+	min-height: 360px;
+	min-width: 540px;
+	height: 60%;
+	width: 70%;
+	position: fixed;
+	top: 0px; right: 0px; bottom: 0px; left: 0px;
+	margin: auto;
 }
 .panel .close {
-    float: right;
-    position: relative;
-    top: 3px;
-    right: 3px;
-    font-size: 30px;
-    cursor: pointer;
-    line-height: 0.8;
+	float: right;
+	position: relative;
+	top: 3px;
+	right: 3px;
+	font-size: 30px;
+	cursor: pointer;
+	line-height: 0.8;
 }
 .panel .close:hover {
-    color: red;
+	color: red;
 }
 
 .panel .data {
-    font-size: 25px;
-    position: fixed;
-    top: 0px; right: 0px; bottom: 0px; left: 0px;
-    margin: auto;
-    border-spacing: 8px;
+	font-size: 25px;
+	position: fixed;
+	top: 0px; right: 0px; bottom: 0px; left: 0px;
+	margin: auto;
+	border-spacing: 8px;
 }
 
 .panel .data tr td:first-child {
-    text-align: right;
+	text-align: right;
 }
 
 .alert {
-    z-index: 50;
-    position: relative;
-    padding: 0.75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    position: fixed;
-    top: 5px;
-    left: 5px;
-    right: 5px;
+	z-index: 50;
+	position: relative;
+	padding: 0.75rem 1.25rem;
+	margin-bottom: 1rem;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	position: fixed;
+	top: 5px;
+	left: 5px;
+	right: 5px;
 }
 
 .alert-primary {
-    color: #004085;
-    background-color: #cce5ff;
-    border-color: #b8daff;
+	color: #004085;
+	background-color: #cce5ff;
+	border-color: #b8daff;
 }
 
 .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
+	color: #155724;
+	background-color: #d4edda;
+	border-color: #c3e6cb;
 }
 
 .alert-danger {
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
+	color: #721c24;
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
 }
 
 .close {
-    float: right;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: .5;
+	float: right;
+	font-size: 1.5rem;
+	font-weight: 700;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	opacity: .5;
 }
 
 .close:focus, .close:hover {
-    color: #000;
-    text-decoration: none;
-    opacity: .75;
+	color: #000;
+	text-decoration: none;
+	opacity: .75;
 }
 
 button.close {
-    cursor: pointer;
-    padding: 0;
-    background-color: transparent;
-    border: 0;
-    -webkit-appearance: none;
-    position: absolute;
-    padding: 0.75rem 1.25rem;
-    top: 0;
-    right: 0;
+	cursor: pointer;
+	padding: 0;
+	background-color: transparent;
+	border: 0;
+	-webkit-appearance: none;
+	position: absolute;
+	padding: 0.75rem 1.25rem;
+	top: 0;
+	right: 0;
 }
 
 .message {
-    text-align: right;
+	text-align: right;
 }
 
 
 div.serverinfo {
-    width: 590px;
-    right: 8px;
-    top: 118px;
-    position: fixed;
-    border: 1px solid #cdcdcd;
-    text-align: center;
-    max-height: calc(100% - 150px);
-    overflow-y: auto;
-    padding-bottom: 20px;
+	width: 590px;
+	right: 8px;
+	top: 118px;
+	position: fixed;
+	border: 1px solid #cdcdcd;
+	text-align: center;
+	max-height: calc(100% - 150px);
+	overflow-y: auto;
+	padding-bottom: 20px;
 }
 
 .serverinfo hr {
-    border: 1px solid #e5e5e5;
+	border: 1px solid #e5e5e5;
 }
 
 .serverinfo h1 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .serverinfo h2 {
-    font-weight: normal;
-    margin-top: 0px;
-    margin-bottom: 10px;
+	font-weight: normal;
+	margin-top: 0px;
+	margin-bottom: 10px;
 }
 
 .serverinfo .description {
-    text-align: justify;
-    padding: 0px 20px;
+	text-align: justify;
+	padding: 0px 20px;
 }
 
 @media screen and (max-width: 1500px) {
-    div.serverinfo {
-        width: 490px;
-    }
-    table.serverlist{
-        width: calc(100% - 500px);
-    }
+	div.serverinfo {
+		width: 490px;
+	}
+	table.serverlist{
+		width: calc(100% - 500px);
+	}
 }
 
 @media screen and (max-width: 992px) {
-    div.serverinfo {
-        width: 350px;
-    }
-    table.serverlist{
-        width: calc(100% - 360px);
-    }
+	div.serverinfo {
+		width: 350px;
+	}
+	table.serverlist{
+		width: calc(100% - 360px);
+	}
 }
 
 
@@ -297,29 +297,29 @@ div.serverinfo {
 .serverlist .map-image object,
 .session-details .map-preview,
 .session-details .map-preview img {
-    width: 64px;
-    height: 64px;
+	width: 64px;
+	height: 64px;
 }
 
 .serverinfo .map-image,
 .serverinfo .map-image img,
 .serverinfo .map-image object  {
-    width: 256px;
-    height: 256px;
+	width: 256px;
+	height: 256px;
 }
 .serverinfo .map-image .gamemode-preview  {
-    width: 200px;
-    height: 200px;
-    left: 28px;
-    top: 28px;
+	width: 200px;
+	height: 200px;
+	left: 28px;
+	top: 28px;
 }
 
 .map-image {
-    position: relative;
+	position: relative;
 	
 	left: 0;
-    right: 0;
-    margin: auto;
+	right: 0;
+	margin: auto;
 }
 
 .map-image img,
@@ -327,4 +327,48 @@ div.serverinfo {
 	top: 0;
 	left: 0;
 	position: absolute;
+}
+
+.badge {
+	border: 1px solid gray;
+	border-radius: 5px;
+	text-align: center;
+}
+.badge.green {
+	background-color: lime;
+}
+.badge.orange {
+	background-color: orange;
+}
+.badge.red {
+	background-color: red;
+}
+.badge.red {
+	background-color: gray;
+	color: white;
+}
+
+.submitpage {
+	margin: auto;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	position: fixed;
+	width: 300px;
+	height: 450px;
+	background-color: white;
+	border: 1px solid gray;
+	border-radius: 5px;
+	padding: 20px;
+}
+.submitpage h3 {
+	margin-block-end: 3px;
+}
+
+.submitpage input[type="text"],
+.submitpage select,
+.submitpage textarea {
+	width: 100%;
+	font-size: 20px;
 }
