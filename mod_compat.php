@@ -93,8 +93,10 @@ if(!empty($_POST["name"])) {
 			<?php
 			function parseStatus($status) {
 				switch($status){
-					case -1:
+					case -2:
 						return "<div class='badge gray'>Untested</div>";
+					case -1:
+						return "<div class='badge red'>Causes Issues</div>";
 					case 0:
 						return "<div class='badge red'>Doesn't work</div>";
 					case 1:
@@ -136,6 +138,7 @@ if(!empty($_POST["name"])) {
 		<input name="url" type="text" required>
 		<h3>State*</h3>
 		<select name="state" required>
+			<option value="-1">Causes Issues</option>
 			<option value="0">Doesn't work</option>
 			<option value="1">Works partially</option>
 			<option value="2">Works</option>
