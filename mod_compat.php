@@ -68,8 +68,8 @@ if(!empty($_POST["name"])) {
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 	<link rel="manifest" href="/favicon/site.webmanifest">
-	<link rel="stylesheet" type="text/css" href="/css/style.css?version=1">
-	<meta name="description" content="Public Serverlist of the AMP Mod for Blade & Sorcery VR.">
+	<link rel="stylesheet" type="text/css" href="/css/style.css?version=2">
+	<meta name="description" content="Public Compatibility Chart of the AMP Mod for Blade & Sorcery VR.">
 </head>
 <body>
 	<p class="title">AMP Mod Compatibility</p>
