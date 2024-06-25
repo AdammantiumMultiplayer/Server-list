@@ -372,3 +372,14 @@ div.serverinfo {
 	width: 100%;
 	font-size: 20px;
 }
+
+.question {
+	padding: 50px 50px 10px 50px;
+	font-size: 25px;
+}
+.answers {
+	padding: 50px;
+}
+.answers button {
+	font-size: 20px;
+}
