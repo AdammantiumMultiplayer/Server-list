@@ -30,6 +30,7 @@ require("incl/database.php")
 			</div>
 		</div>
 		<button onclick='connectToMod()' class='btn red'>Retry</button>
+		<button onclick="location.pathname = 'helper.php';" class='btn red'>I need help</button>
 	</div>
 
 	<table class="serverlist" id="serverlist">
