@@ -68,12 +68,25 @@ if(!empty($_POST["name"])) {
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 	<link rel="manifest" href="/favicon/site.webmanifest">
-	<link rel="stylesheet" type="text/css" href="/css/style.css?version=2">
+	<link rel="stylesheet" type="text/css" href="/css/style.css?version=3">
 	<meta name="description" content="Public Compatibility Chart of the AMP Mod for Blade & Sorcery VR.">
 </head>
 <body>
 	<p class="title">AMP Mod Compatibility</p>
-	
+	<div class="subtitle">
+		<div>
+			Breaks Multiplayer: <div style='color: red; text-align: center; font-size: 30px; display: inline-block;' title='Breaks Multiplayer'>⚠</div>
+		</div>
+		<div>
+			Not Syncing: <div style='color: red; text-align: center; display: inline-block;' title='Not Syncing'><?php echo stars(3, 1); ?></div>
+		</div>
+		<div>
+			Works partially: <div style='color: orange; text-align: center; display: inline-block;' title='Works partially'><?php echo stars(3, 2); ?></div>
+		</div>
+		<div>
+			Works: <div style='color: green; text-align: center; display: inline-block;' title='Works'><?php echo stars(3, 3); ?></div>
+		</div>
+	</div>
 	<table class="serverlist" id="modlist" style="width: 100%;">
 		<thead>
 			<tr>
@@ -91,18 +104,25 @@ if(!empty($_POST["name"])) {
 		</thead>
 		<tbody>
 			<?php
+			function stars($count, $filled) {
+				$filledstr = "<p class='stars filled'>".str_repeat("★", $filled)."</p>";
+				$unfilledstr =  "<p class='stars unfilled'>"."".str_repeat("★", ($count - $filled))."</p>";
+				
+				return $filledstr.$unfilledstr;
+			}
+			
 			function parseStatus($status) {
 				switch($status){
 					case -2:
 						return "<div class='badge gray'>Untested</div>";
 					case -1:
-						return "<div class='badge red'>Causes Issues</div>";
+						return "<div style='color: red; text-align: center; font-size: 30px;' title='Breaks Multiplayer'>⚠</div>";
 					case 0:
-						return "<div class='badge red'>Doesn't work</div>";
+						return "<div style='color: red; text-align: center;' title='Not Syncing'>".stars(3, 1)."</div>";
 					case 1:
-						return "<div class='badge orange'>Works partially</div>";
+						return "<div style='color: orange; text-align: center;' title='Works partially'>".stars(3, 2)."</div>";
 					case 2:
-						return "<div class='badge green'>Works</div>";
+						return "<div style='color: green; text-align: center;' title='Works'>".stars(3, 3)."</div>";
 					default:
 						return "";
 				}

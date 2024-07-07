@@ -333,6 +333,7 @@ div.serverinfo {
 	border: 1px solid gray;
 	border-radius: 5px;
 	text-align: center;
+	font-size: 30px;
 }
 .badge.green {
 	background-color: lime;
@@ -342,6 +343,7 @@ div.serverinfo {
 }
 .badge.red {
 	background-color: red;
+	color: white;
 }
 .badge.gray {
 	background-color: gray;
@@ -382,4 +384,28 @@ div.serverinfo {
 }
 .answers button {
 	font-size: 20px;
+}
+
+.stars {
+	display: inline-block;
+	font-size: 30px;
+	margin: 0px;
+}
+
+
+.stars.unfilled {
+	color: white;
+	text-shadow: black 0px 0px 2px;
+}
+
+.subtitle {
+	padding-top: 10px;
+	vertical-align: middle;
+}
+.subtitle > div {
+	display: inline-block;
+	padding-right: 20px;
+}
+.subtitle > div:not(:first-child) {
+	padding-left: 20px;
 }
