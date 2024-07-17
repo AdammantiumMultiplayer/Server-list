@@ -15,7 +15,8 @@ function getAddress() {
 	} else if($address == "192.168.178.100") {
 		$address = "dev.devforce.de";
 	} else {
-		$address = gethostbyaddr($address);
+		// Just show the IP
+		//$address = gethostbyaddr($address);
 	}
 
 	return $address;
