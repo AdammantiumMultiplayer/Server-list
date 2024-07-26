@@ -10,7 +10,7 @@ require("incl/database.php")
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
 	<link rel="manifest" href="/favicon/site.webmanifest">
-	<link rel="stylesheet" type="text/css" href="/css/style.css?version=3">
+	<link rel="stylesheet" type="text/css" href="/css/style.css?version=4">
 	<meta name="description" content="Public Serverlist of the AMP Mod for Blade & Sorcery VR.">
 </head>
 <body>

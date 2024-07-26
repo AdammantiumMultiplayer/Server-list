@@ -409,3 +409,28 @@ div.serverinfo {
 .subtitle > div:not(:first-child) {
 	padding-left: 20px;
 }
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #242424;
+        color: white;
+    }
+	a {
+		color: #72c0ff;
+	}
+	.submitpage {
+        background-color: #242424;
+	}
+	table.serverlist th {
+		background-color: #373737;
+	}
+}
