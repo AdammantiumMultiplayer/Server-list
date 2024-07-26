@@ -433,4 +433,13 @@ div.serverinfo {
 	table.serverlist th {
 		background-color: #373737;
 	}
+	table.serverlist .description {
+        color: #bebebe;
+	}
+	table.serverlist tr.active {
+		background-color: rgb(0, 45, 19) !important;
+	}
+	table.serverlist tr:hover td {
+		background-color: rgb(0, 56, 23);
+	}
 }
