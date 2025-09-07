@@ -174,6 +174,21 @@ body.loaded .title:after { width: 72%; }
 .subtitle { padding-top: 12px; vertical-align: middle; display: flex; flex-wrap: wrap; gap: 24px; }
 .subtitle > div { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; color: var(--color-text-soft); }
 
+/* Integrated title navigation (inline with main heading) */
+.title-bar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px; margin: var(--space-sm) 0 4px 24px; }
+.title-bar .title { margin: 0; line-height: 1; }
+.title-nav { display: inline-flex; gap: 20px; padding: 0 0 2px; position: relative; top: 2px; }
+.title-link { position: relative; font-weight: 600; font-size: clamp(.74rem,.62rem + .42vw,.92rem); text-transform: uppercase; letter-spacing: 1.15px; text-decoration: none; color: var(--color-text-faint); padding: 2px 2px 6px; transition: color var(--transition-base), opacity var(--transition-base); opacity: .85; }
+.title-link:hover { color: var(--color-text-soft); opacity: 1; }
+.title-link:focus-visible { outline: none; box-shadow: var(--shadow-focus); border-radius: 4px; }
+.title-link.active { background: linear-gradient(110deg,#0ab5ec,#2563eb 55%,#7c3aed 85%,#0ab5ec); background-size: 200% 100%; background-clip: text; -webkit-background-clip: text; color: transparent; animation: gradientShift 9s linear infinite; opacity: 1; }
+.title-link.active:after, .title-link:not(.active):after { content: ""; position: absolute; left: 4px; right: 4px; bottom: 0; height: 2px; border-radius: var(--radius-full); transition: width var(--transition-slow), background var(--transition-base), opacity var(--transition-base); }
+.title-link:not(.active):after { width: 0; background: linear-gradient(90deg,var(--color-accent-alt), transparent); opacity: .3; }
+body.loaded .title-link:not(.active):hover:after { width: 100%; opacity: .55; }
+.title-link.active:after { width: 100%; background: linear-gradient(90deg,var(--color-accent), transparent); opacity: .9; }
+@media (prefers-reduced-motion: reduce) { .title-link.active { animation: none; } }
+@media screen and (max-width: 720px) { .title-bar { margin-left: 16px; gap: 10px; } .title-nav { gap: 14px; } }
+
 /* Status / Mod Panel */
 .modstatus {
 	position: fixed; top: 8px; right: 12px;

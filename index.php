@@ -14,8 +14,13 @@ require("incl/database.php")
 	<meta name="description" content="Public Serverlist of the AMP Mod for Blade & Sorcery VR.">
 </head>
 <body>
-	<p class="title">Adammantium Multiplayer</p>
-	<p class="title">Serverlist</p>
+	<div class="title-bar">
+		<p class="title">Adammantium Multiplayer</p>
+		<nav class="title-nav" aria-label="Main">
+			<a href="index.php" class="title-link active">Serverlist</a>
+			<a href="mod_compat.php" class="title-link">Mod Compatibility</a>
+		</nav>
+	</div>
 
 	<div class="modstatus">
 		<p class="message"></p>

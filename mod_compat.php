@@ -72,7 +72,13 @@ if(!empty($_POST["name"])) {
 	<meta name="description" content="Public Compatibility Chart of the AMP Mod for Blade & Sorcery VR.">
 </head>
 <body>
-	<p class="title">AMP Mod Compatibility</p>
+	<div class="title-bar">
+		<p class="title">Adammantium Multiplayer</p>
+		<nav class="title-nav" aria-label="Main">
+			<a href="index.php" class="title-link">Serverlist</a>
+			<a href="mod_compat.php" class="title-link active">Mod Compatibility</a>
+		</nav>
+	</div>
 	<div class="subtitle">
 		<div>
 			Breaks Multiplayer: <div style='color: red; text-align: center; font-size: 30px; display: inline-block;' title='Breaks Multiplayer'>⚠</div>
