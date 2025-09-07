@@ -211,10 +211,31 @@ function decode_boolean(str) {
     }
 }
 
-$("tr.server").find("td:not(:last)").click(function() {
+// Assign stagger values to each server row for CSS animation
+function applyRowStagger() {
+    $("#serverlist tr.server").each(function(i){
+        this.style.setProperty('--stagger', i.toString());
+    });
+}
+
+$("tr.server").find("td:not(:last)").on('click', function() {
+    // add a small refresh animation to side panel
+    var panel = document.querySelector('.serverinfo');
+    if(panel) {
+        panel.classList.remove('refreshing');
+        // force reflow
+        void panel.offsetWidth;
+        panel.classList.add('refreshing');
+    }
     infoRow(this);
 });
-	
-setTimeout(function() {
-    $("#serverlist tr.server:first td:first").click();
-}, 100);
+
+document.addEventListener('DOMContentLoaded', function(){
+    applyRowStagger();
+    // Mark body loaded to trigger CSS entrance animations
+    document.body.classList.add('loaded');
+    // Auto-select first row after slight delay so animation can begin
+    setTimeout(function() {
+        $("#serverlist tr.server:first td:first").trigger('click');
+    }, 180);
+});
