@@ -215,6 +215,9 @@ function decode_boolean(str) {
 function applyRowStagger() {
     $("#serverlist tr.server").each(function(i){
         this.style.setProperty('--stagger', i.toString());
+        // Add animation class after a microtask so initial paint is visible
+        const row = this;
+        setTimeout(function(){ row.classList.add('animate-in'); }, 0);
     });
 }
 
@@ -233,7 +236,7 @@ $("tr.server").find("td:not(:last)").on('click', function() {
 document.addEventListener('DOMContentLoaded', function(){
     applyRowStagger();
     // Mark body loaded to trigger CSS entrance animations
-    document.body.classList.add('loaded');
+    document.body.classList.add('loaded'); // still used for title underline but no longer hides rows
     // Auto-select first row after slight delay so animation can begin
     setTimeout(function() {
         $("#serverlist tr.server:first td:first").trigger('click');

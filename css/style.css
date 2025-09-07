@@ -225,7 +225,14 @@ table.serverlist td:nth-child(3), table.serverlist td:nth-child(4), table.server
 table.serverlist .description { display: flex; color: var(--color-text-soft); font-size: 14px; margin-top: 4px; line-height: 1.3; }
 table.serverlist .note { color: var(--color-warning); font-size: 14px; }
 table.serverlist tr { transition: background-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-fast); position: relative; }
-table.serverlist tr.active { background: var(--color-positive-bg) !important; box-shadow: inset 4px 0 0 var(--color-positive); }
+/* Active (selected) row highlight: subtle accent gradient + left bar */
+table.serverlist tr.active { box-shadow: inset 6px 0 0 var(--color-accent); background: none !important; }
+table.serverlist tr.active td,
+table.serverlist tr.active:hover td { background: linear-gradient(90deg, rgba(10,181,236,0.14), rgba(37,99,235,0.08)); }
+@media (prefers-color-scheme: dark) {
+	table.serverlist tr.active td,
+	table.serverlist tr.active:hover td { background: linear-gradient(90deg, rgba(10,181,236,0.22), rgba(37,99,235,0.16)); }
+}
 table.serverlist tr:hover td { background: var(--color-surface-alt); cursor: pointer; }
 @media (prefers-color-scheme: dark) { table.serverlist tr:hover td { background: #30373d; } }
 table.serverlist tr:hover { transform: translateY(-1px); }
@@ -242,8 +249,8 @@ span.tick { float: left; background: var(--gradient-accent); color: #fff; border
 	60% { opacity: 1; transform: translateY(0); }
 	100% { opacity: 1; transform: translateY(0); }
 }
-body:not(.loaded) table.serverlist tbody tr.server { opacity: 0; }
-body.loaded table.serverlist tbody tr.server {
+/* Apply animation only when JS adds .animate-in (so rows stay visible if JS fails) */
+table.serverlist tbody tr.server.animate-in {
 	animation: fadeRowIn .55s cubic-bezier(.4,0,.25,1) forwards;
 	animation-delay: calc(var(--stagger, 0) * 55ms);
 }
@@ -388,6 +395,7 @@ button.close { cursor: pointer; padding: 0; background: transparent; border: 0; 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 
 /* End of stylesheet */
+/* (Legacy duplicate rules below were removed to prevent overrides) */
 .modstatus .btn { float: right; display: none; margin-left: 8px; }
 .modstatus.error { border-color: var(--color-negative); box-shadow: 0 0 0 3px rgba(255,0,0,0.15); }
 .modstatus.error .btn { display: inline-flex; }
@@ -429,7 +437,15 @@ table.serverlist td:nth-child(7) { text-align: center; }
 table.serverlist .description { display: flex; color: var(--color-text-soft); font-size: 14px; margin-top: 4px; line-height: 1.3; }
 table.serverlist .note { color: var(--color-warning); font-size: 14px; }
 table.serverlist tr { transition: background-color var(--transition-base), box-shadow var(--transition-base); }
-table.serverlist tr.active { background: var(--color-positive-bg) !important; box-shadow: inset 4px 0 0 var(--color-positive); }
+/* Active (selected) row highlight (legacy duplicate block override retained) */
+table.serverlist tr.active { box-shadow: inset 6px 0 0 var(--color-accent); background: linear-gradient(90deg, rgba(10,181,236,0.14), rgba(37,99,235,0.08)) !important; }
+table.serverlist tr.active td { background: none !important; }
+table.serverlist tr.active:hover { background: linear-gradient(90deg, rgba(10,181,236,0.18), rgba(37,99,235,0.12)) !important; }
+table.serverlist tr.active:hover td { background: none !important; }
+@media (prefers-color-scheme: dark) {
+	table.serverlist tr.active { background: linear-gradient(90deg, rgba(10,181,236,0.22), rgba(37,99,235,0.16)) !important; }
+	table.serverlist tr.active:hover { background: linear-gradient(90deg, rgba(10,181,236,0.28), rgba(37,99,235,0.20)) !important; }
+}
 table.serverlist tr:hover td { background: var(--color-surface-alt); cursor: pointer; }
 @media (prefers-color-scheme: dark) { table.serverlist tr:hover td { background: #30373d; } }
 table.serverlist img, table.serverlist object { border-radius: var(--radius-sm); }
