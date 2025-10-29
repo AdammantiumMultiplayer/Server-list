@@ -1,4 +1,5 @@
 #EU1 Server;http://de-amp.adamite.de:3000
 EU2 Server;http://31.56.26.93:3000
 EU3 Server;http://de3-amp.adamite.de:3000
-US Server;https://us-amp.adamite.de/api
+US1 Server;https://us-amp.adamite.de/api
+US2 Server;http://88.214.59.223:3000

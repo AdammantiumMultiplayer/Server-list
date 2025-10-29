@@ -2,7 +2,7 @@
 echo "[";
 
 $cache_file = "cache/list.json";
-if (time()-filemtime($cache_file) < 10) { // 10 seconds
+if (time()-filemtime($cache_file) < 30) { // 30 seconds
 	echo file_get_contents($cache_file);
 //	echo "cached";
 }else{

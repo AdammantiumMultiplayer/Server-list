@@ -266,6 +266,9 @@ span.tick { float: left; background: var(--gradient-accent); color: #fff; border
 }
 /* Apply animation only when JS adds .animate-in (so rows stay visible if JS fails) */
 table.serverlist tbody tr.server.animate-in {
+	opacity: 0;
+}
+table.serverlist tbody tr.server.animate-in {
 	animation: fadeRowIn .55s cubic-bezier(.4,0,.25,1) forwards;
 	animation-delay: calc(var(--stagger, 0) * 55ms);
 }
