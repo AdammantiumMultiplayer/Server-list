@@ -2,11 +2,13 @@
 echo "[";
 
 $cache_file = "../cache/hostserver.json";
-if (time()-filemtime($cache_file) < 60) { // 60 seconds
+if (time()-filemtime($cache_file) < 120) { // 60 seconds
         echo file_get_contents($cache_file);
 //      echo "cached";
 }else{
 	require("../incl/database.php");
+	
+	ini_set('default_socket_timeout', 5); // 900
 
         $result = executeQuery("select * from v_hostservers;");
         $first = true;
