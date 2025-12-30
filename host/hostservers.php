@@ -31,6 +31,14 @@ if (time()-filemtime($cache_file) < 120) { // 60 seconds
 			$data["current_lobbies"] = intval(trim($parts[0]));
 			$data["max_lobbies"] = intval(trim($parts[1]));
 			$data["utilization"] = round($data["current_lobbies"] / $data["max_lobbies"] * 100);
+                        
+                        $statement = $conn->prepare("UPDATE hostservers SET current_lobbies = ?, max_lobbies = ? WHERE address = ?");
+                        $ok = $statement->execute([
+			/* current_lobbies */ $data["current_lobbies"],
+			/* max_lobbies     */ $data["max_lobbies"],
+			/* address         */ $data["address"]
+                                                ]);
+
 		}else{
 			$data["current_lobbies"] = 0;
 			$data["max_lobbies"] = 0;

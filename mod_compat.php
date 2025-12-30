@@ -77,6 +77,7 @@ if(!empty($_POST["name"])) {
 		<nav class="title-nav" aria-label="Main">
 			<a href="index.php" class="title-link">Serverlist</a>
 			<a href="mod_compat.php" class="title-link active">Mod Compatibility</a>
+			<a href="map.php" class="title-link">Server Map</a>
 		</nav>
 	</div>
 	<div class="subtitle">
