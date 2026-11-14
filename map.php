@@ -75,7 +75,7 @@ require("incl/database.php")
 			];
 
 			// Get real servers from database
-			$result = executeQuery("select name, latitude, longitude, current_lobbies, max_lobbies from hostservers where latitude IS NOT NULL AND longitude IS NOT NULL");
+			$result = executeQuery("select name, latitude, longitude, current_lobbies, max_lobbies from hostservers where enabled = 1 AND latitude IS NOT NULL AND longitude IS NOT NULL");
 
 			$allServers = $result; #array_merge($sampleServers, $result);
 			?>
