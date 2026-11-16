@@ -9,7 +9,7 @@ if(!empty($_POST["name"])) {
 
 	// in this sample, we are using the originating IP, but you can modify to use API keys, or tokens or what-have-you.
 	$rateLimiter = new RateLimiter($_SERVER["REMOTE_ADDR"]);
-
+	
 	$limit = 5; // number of connections to limit user to per $minutes
 	$minutes = 3; // number of $minutes to check for.
 	$seconds = floor($minutes * 60);	//	retry after $minutes in seconds.
