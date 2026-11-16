@@ -21,7 +21,7 @@ if(!$resultArray) {
 			"vote_notsynced" => $resultArray["vote_notsynced"],
 			"vote_partiallysynced" => $resultArray["vote_partiallysynced"],
 			"vote_fullysynced" => $resultArray["vote_fullysynced"],
-			"votable" => $resultArray["votable"]
+			"votable" => $resultArray["voteable"]
         ]);
 }
 
