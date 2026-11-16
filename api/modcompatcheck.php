@@ -5,7 +5,7 @@ ini_set('default_socket_timeout', 5); // 900
 
 
 $statement = $conn->prepare("SELECT vote_willbreakmod, vote_notsynced, vote_partiallysynced, vote_fullysynced, voteable FROM ingame_mod_compat WHERE mod_name = ?");
-$ok = $statement->execute([ trim(intval($_GET['name'] ?? '0')) ]);
+$ok = $statement->execute([ trim($_GET['name'] ?? '---') ]);
 $resultArray = $statement->fetch();
 if(!$resultArray) {
         echo json_encode([
