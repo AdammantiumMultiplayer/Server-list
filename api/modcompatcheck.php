@@ -13,7 +13,7 @@ if(!$resultArray) {
 			"vote_notsynced" => 0,
 			"vote_partiallysynced" => 0,
 			"vote_fullysynced" => 0,
-			"votable" => true
+			"voteable" => true
         ]);
 }else{
         echo json_encode([
